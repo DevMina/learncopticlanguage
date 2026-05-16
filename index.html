@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta name="google-site-verification" content="GOja7k5RwvYSs2R2kBDP1cEYgzTU8GIXNakyuKcD-FU" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M1689XGF9K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M1689XGF9K');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Learn Coptic Language | تعليم اللغة القبطية">
+    <meta name="description" content="Learn the Coptic language online for free. Lessons on the Coptic alphabet, grammar, vocabulary, and daily conversation. تعليم اللغة القبطية للمبتدئين">
+    <meta name="keywords" content="Coptic language, learn coptic, Coptic alphabet, دروس لغة قبطية, تعليم القبطية, حروف اللغة القبطية">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://learncopticlanguage.somee.com/">
+    <meta property="og:title" content="Learn Coptic Language | Free Lessons & Resources">
+    <meta property="og:description" content="Start learning the Coptic language today with free lessons on grammar, alphabet, and more.">
+
+    <meta name="robots" content="index, follow">
+    <title>اللغة القبطية - Learn Coptic Language</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body dir="rtl">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <a class="navbar-brand fw-bold" href="index.html" data-ar="تعليم اللغة القبطية" data-en="Learn Coptic Language">تعليم اللغة القبطية</a>
+                <div class="d-flex align-items-center gap-3" style="margin-right:auto;">
+                    <select id="languageSelector" class="form-select form-select-sm" style="width:auto;" onchange="changeLanguage(this.value)">
+                        <option value="ar" selected>العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Global Loader -->
+    <div id="global-loader"
+         style="display:none;
+                position:fixed;
+                top:0; left:0; right:0; bottom:0;
+                background:rgba(255,255,255,0.8);
+                z-index:9999;
+                display:flex;
+                align-items:center;
+                justify-content:center;">
+        <div class="spinner-border text-primary" style="width:3rem;height:3rem;" role="status">
+            <span class="visually-hidden">جاري التحميل...</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="header-bar">
+                <h2><span class="arabic-text-header-class" data-ar="اللغة القبطية" data-en="Coptic Language">اللغة القبطية</span></h2>
+            </div>
+
+            <div class="coptic-grid">
+                <a href="intro.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="مقدمة عن اللغة القبطية" data-en="Introduction to Coptic Language">مقدمة عن اللغة القبطية</p>
+                        <div class="coptic-btn">= a</div>
+                    </div>
+                </a>
+
+                <a href="letters.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="الحروف القبطية" data-en="Coptic Letters">الحروف القبطية</p>
+                        <div class="coptic-btn">= b</div>
+                    </div>
+                </a>
+
+                <a href="numbers.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="الأعداد القبطية" data-en="Coptic Numbers">الأعداد القبطية</p>
+                        <div class="coptic-btn">= j</div>
+                    </div>
+                </a>
+
+                <a href="colors.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="الألوان" data-en="Colors">الألوان</p>
+                        <div class="coptic-btn">= d</div>
+                    </div>
+                </a>
+
+                <a href="animals.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="الحيوانات" data-en="Animals">الحيوانات</p>
+                        <div class="coptic-btn">= e</div>
+                    </div>
+                </a>
+
+                <a href="fruits.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="الفواكه" data-en="Fruits">الفواكه</p>
+                        <div class="coptic-btn">6</div>
+                    </div>
+                </a>
+
+                <a href="rules.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="قواعد اللغة القبطية" data-en="Coptic Grammar Rules">قواعد اللغة القبطية</p>
+                        <div class="coptic-btn">= z</div>
+                    </div>
+                </a>
+
+                <a href="words.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="كلمات قبطيه للممارسه" data-en="Coptic Practice Words">كلمات قبطيه للممارسه</p>
+                        <div class="coptic-btn">= 3</div>
+                    </div>
+                </a>
+
+                <a href="phrases.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="جُمل للمحادثه اليوميه" data-en="Daily Conversation Phrases">جُمل للمحادثه اليوميه</p>
+                        <div class="coptic-btn">= 0</div>
+                    </div>
+                </a>
+
+                <a href="texts.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="نصوص باللغة القبطية" data-en="Coptic Texts">نصوص باللغة القبطية</p>
+                        <div class="coptic-btn">= i</div>
+                    </div>
+                </a>
+
+                <a href="translator.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="قاموس قبطى - عربى" data-en="Coptic - Arabic Dictionary">قاموس قبطى - عربى</p>
+                        <div class="coptic-btn">= k</div>
+                    </div>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted position-relative">
+        <div class=" position-relative">
+            &copy; 2025 - <span data-ar="تعليم اللغة القبطية" data-en="Learn Coptic Language">تعليم اللغة القبطية</span>
+        </div>
+    </footer>
+
+    <audio id="player"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/site.js"></script>
+    <script src="js/language.js"></script>
+
+    <script>
+        // Initialize language switching
+        $(document).ready(function() {
+            // Ensure changeLanguage function is available
+            if (typeof changeLanguage === 'function') {
+                console.log('Language switching function loaded');
+                
+                // Test language switching immediately
+                $('#languageSelector').on('change', function() {
+                    console.log('Language changed to: ' + $(this).val());
+                    changeLanguage($(this).val());
+                });
+                
+            } else {
+                console.error('Language switching function not found');
+            }
+        });
+
+        // Loader for navigation clicks
+        $(document).on("click", "a[href]:not([target]):not([href^='#']):not([href^='javascript:'])", function () {
+            $("#global-loader").fadeIn(150);
+        });
+
+        // Hide loader when new page is loaded
+        $(window).on("pageshow load", function () {
+            $("#global-loader").fadeOut(150);
+        });
+    </script>
+</body>
+</html>

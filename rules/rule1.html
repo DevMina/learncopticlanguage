@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>التفريق بين الكلمات القبطية واليونانية - تعليم اللغة القبطية</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body dir="rtl">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <a class="navbar-brand fw-bold" href="../index.html">تعليم اللغة القبطية</a>
+                <div class="d-flex align-items-center gap-3" style="margin-right:auto;">
+                    <select id="languageSelector" class="form-select form-select-sm" style="width:auto;" onchange="changeLanguage(this.value)">
+                        <option value="ar" selected>العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid p-0 bg-white">
+        <!-- Header -->
+        <div class="header-bar">
+            <div class="header-nav">
+                <span class="header-label">
+                    <span class="arabic-text-class" data-ar="التفريق بين الكلمات القبطية واليونانية" data-en="Distinguishing Coptic and Greek Words">التفريق بين الكلمات القبطية واليونانية</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="container py-4">
+            <div class="row justify-content-center">
+
+                <!-- Rule 1 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card rule-card">
+                        <div class="card-header">
+                            <span class="coptic-text-class">✥</span>
+                            <span class="arabic-text-class" data-ar="سبعة حروف عادة تأتى فى الكلمات القبطيه" data-en="Seven letters usually come in Coptic words">سبعة حروف عادة تأتى فى الكلمات القبطيه</span>
+                            <span class="coptic-text-class">2 - 4 - q - h - g - s - 5</span>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <span class="coptic-text-class">✥</span>
+                                <span class="arabic-text-class" data-ar="أمثلة" data-en="Examples">أمثلة</span>
+                            </p>
+                            <div class="d-flex flex-column">
+                                <table class="table table-borderless">
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</td>
+                                        <td class="coptic-text-class">Gig</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</td>
+                                        <td class="arabic-text-class" data-ar="يد" data-en="Hand">يد</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</td>
+                                        <td class="arabic-text-class" data-ar="چيج" data-en="Gig">چيج</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule1/Jig.m4a')">
+                                <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rule 2 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card rule-card">
+                        <div class="card-header">
+                            <span class="coptic-text-class">✥</span>
+                            <span class="arabic-text-class" data-ar="خمسة حروف عادة تأتى فى الكلمات اليونانيه" data-en="Five letters usually come in Greek words">خمسة حروف عادة تأتى فى الكلمات اليونانيه</span>
+                            <span class="coptic-text-class">j - d - z - 7 - y</span>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <span class="coptic-text-class">✥</span>
+                                <span class="arabic-text-class" data-ar="أمثلة" data-en="Examples">أمثلة</span>
+                            </p>
+                            <div class="d-flex flex-column">
+                                <table class="table table-borderless">
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</td>
+                                        <td class="coptic-text-class" dir="ltr">` Ajioc</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</td>
+                                        <td class="arabic-text-class" data-ar="قدوس" data-en="Agios">قدوس</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</td>
+                                        <td class="arabic-text-class" data-ar="آجيوس" data-en="Agios">آجيوس</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule1/Agios.m4a')">
+                                <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rule 3 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card rule-card">
+                        <div class="card-header">
+                            <span class="coptic-text-class">✥</span>
+                            <span class="arabic-text-class" data-ar="نهايات توضح أن أصل الكلمه يونانى" data-en="Endings show that the word origin is Greek">نهايات توضح أن أصل الكلمه يونانى</span>
+                            <span class="coptic-text-class">ac - oc - 3c - an - on - 3n</span>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <span class="coptic-text-class">✥</span>
+                                <span class="arabic-text-class" data-ar="أمثلة" data-en="Examples">أمثلة</span>
+                            </p>
+                            <div class="d-flex flex-column">
+                                <table class="table table-borderless">
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</td>
+                                        <td class="coptic-text-class">Kocmoc</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</td>
+                                        <td class="arabic-text-class" data-ar="عالم" data-en="World">عالم</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</td>
+                                        <td class="arabic-text-class" data-ar="كوزموس" data-en="Kozmos">كوزموس</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule1/Kozmos.m4a')">
+                                <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rule 4 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card rule-card">
+                        <div class="card-header">
+                            <span class="coptic-text-class">✥</span>
+                            <span class="arabic-text-class" data-ar="نادراً ما تأتى الحروف" data-en="Rarely come letters">نادراً ما تأتى الحروف</span>
+                            <span class="coptic-text-class">j - d - z - 7 - y</span>
+                            <span class="arabic-text-class" data-ar="فى كلمات من أصل قبطى" data-en="in words of Coptic origin">فى كلمات من أصل قبطى</span>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <span class="coptic-text-class">✥</span>
+                                <span class="arabic-text-class" data-ar="أمثلة" data-en="Examples">أمثلة</span>
+                            </p>
+                            <div class="d-flex flex-column">
+                                <table class="table table-borderless">
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</td>
+                                        <td class="coptic-text-class">Yit</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</td>
+                                        <td class="arabic-text-class" data-ar="رقم تسعه" data-en="Number sixteen">رقم تسعه</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</td>
+                                        <td class="arabic-text-class" data-ar="بسيت" data-en="Bset">بسيت</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule1/Bset.m4a')">
+                                <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rule 5 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card rule-card">
+                        <div class="card-header">
+                            <span class="coptic-text-class">✥</span>
+                            <span class="arabic-text-class" data-ar="الحرف" data-en="The letter">الحرف</span>
+                            <span class="coptic-text-class">h</span>
+                            <span class="arabic-text-class" data-ar="يأتى فى الكلمات القبطيه ولكن أحياناً يستخدم قبل كلمات يونانيه ليعبر عن علامة التنفس الهائى اليونانيه" data-en="comes in Coptic words but sometimes used before Greek words to express Greek breathing mark">يأتى فى الكلمات القبطيه ولكن أحياناً يستخدم قبل كلمات يونانيه ليعبر عن علامة التنفس الهائى اليونانيه</span>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <span class="coptic-text-class">✥</span>
+                                <span class="arabic-text-class" data-ar="أمثلة" data-en="Examples">أمثلة</span>
+                            </p>
+                            <div class="d-flex flex-column">
+                                <table class="table table-borderless">
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</td>
+                                        <td class="coptic-text-class">Hir3n3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</td>
+                                        <td class="arabic-text-class" data-ar="سلام" data-en="Peace">سلام</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</td>
+                                        <td class="arabic-text-class" data-ar="هيرينى" data-en="Hereny">هيرينى</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule1/Heriny.m4a')">
+                                <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted position-relative">
+        <div class=" position-relative">
+            &copy; 2025 - <span data-ar="تعليم اللغة القبطية" data-en="Learn Coptic Language">تعليم اللغة القبطية</span>
+        </div>
+    </footer>
+
+    <audio id="player"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/site.js"></script>
+    <script src="../js/language.js"></script>
+</body>
+</html>

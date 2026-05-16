@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>قواعد اللغة القبطية - تعليم اللغة القبطية</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body dir="rtl">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <a class="navbar-brand fw-bold" href="index.html">تعليم اللغة القبطية</a>
+                <div class="d-flex align-items-center gap-3" style="margin-right:auto;">
+                    <select id="languageSelector" class="form-select form-select-sm" style="width:auto;" onchange="changeLanguage(this.value)">
+                        <option value="ar" selected>العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="header-bar">
+                <div class="header-nav">
+                    <h2><span class="arabic-text-header-class" data-ar="قواعد اللغة القبطية" data-en="Coptic Language Grammar Rules">قواعد اللغة القبطية</span></h2>
+                </div>
+            </div>
+
+            <div class="coptic-grid">
+                <a href="rules/rule1.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="التفريق بين الكلمات القبطية واليونانية" data-en="Distinguishing Coptic and Greek Words">التفريق بين الكلمات القبطية واليونانية</p>
+                        <div class="coptic-btn">= a</div>
+                    </div>
+                </a>
+
+                <a href="rules/rule2.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="أدوات التعريف والتنكير" data-en="Definite and Indefinite Articles">أدوات التعريف والتنكير</p>
+                        <div class="coptic-btn">= b</div>
+                    </div>
+                </a>
+
+                <a href="rules/rule3.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="أدوات الإضافة" data-en="Addition Tools">أدوات الإضافة</p>
+                        <div class="coptic-btn">= j</div>
+                    </div>
+                </a>
+
+                <a href="rules/rule4.html" class="text-decoration-none">
+                    <div class="coptic-card">
+                        <p class="arabic-text-class arabic-label-class text-dark" data-ar="الأمر والنهى" data-en="Command and Prohibition">الأمر والنهى</p>
+                        <div class="coptic-btn">= d</div>
+                    </div>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted position-relative">
+        <div class=" position-relative">
+            &copy; 2025 - <span data-ar="تعليم اللغة القبطية" data-en="Learn Coptic Language">تعليم اللغة القبطية</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/site.js"></script>
+    <script src="js/language.js"></script>
+    <audio id="player"></audio>
+</body>
+</html>

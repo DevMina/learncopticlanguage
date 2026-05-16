@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الحيوانات - تعليم اللغة القبطية</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body dir="rtl">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <a class="navbar-brand fw-bold" href="index.html">تعليم اللغة القبطية</a>
+                <div class="d-flex align-items-center gap-3" style="margin-right:auto;">
+                    <select id="languageSelector" class="form-select form-select-sm" style="width:auto;" onchange="changeLanguage(this.value)">
+                        <option value="ar" selected>العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="header-bar">
+            <div class="header-nav">
+                <h2><span class="arabic-text-header-class" data-ar="الحيوانات" data-en="Animals">الحيوانات</span></h2>
+            </div>
+        </div>
+
+        <div class="coptic-grid">
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Elefac</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="فيل" data-en="Elephant">فيل</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="إليفاس" data-en="Ilefas">إليفاس</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Elefac.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">An0eroc</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="زرافة" data-en="Giraffe">زرافة</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="أنثيروس" data-en="Antheros">أنثيروس</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Anseros.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Gamovl</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="جمل" data-en="Camel">جمل</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="جامول" data-en="Gamol">جامول</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Gamol.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Laboi</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="دب" data-en="Bear">دب</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="لاڤوى" data-en="Lavoi">لاڤوى</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Lavoi.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">`H0o</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="حصان" data-en="Horse">حصان</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="إهثو" data-en="Ehso">إهثو</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Ehso.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">@o2</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="قرد" data-en="Monkey">قرد</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="شوش" data-en="Shosh">شوش</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Shosh.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Ehe</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="بقرة" data-en="Cow">بقرة</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="إيه" data-en="Ehe">إيه</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Ehe.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Maci</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="خروف" data-en="Sheep">خروف</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="ماسي" data-en="Maci">ماسي</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Maci.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">`E`w</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="أسد" data-en="Lion">أسد</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="إيو" data-en="Eo">إيو</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Eo.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Mov` i</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="نمر" data-en="Tiger">نمر</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="موي" data-en="Moe">موي</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Moe.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Gekr3c</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="كلب" data-en="Dog">كلب</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="جكرس" data-en="Jekres">جكرس</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Jekres.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Hwi5</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="قطة" data-en="Cat">قطة</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="هويت" data-en="Hoiti">هويت</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Hoiti.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Ovwn2</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="بقرة" data-en="Cow">بقرة</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="أونش" data-en="Oonsh">أونش</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Oonsh.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Ba2or</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="بقرة" data-en="Cow">بقرة</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="فاشور" data-en="Vashor">فاشور</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Vashor.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Rir</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="أرنب" data-en="Rabbit">أرنب</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="رير" data-en="Rer">رير</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Rer.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">En</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="نملة" data-en="Ant">نملة</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="إن" data-en="En">إن</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/En.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Ovhor</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="حمامة" data-en="Dove">حمامة</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="أهور" data-en="Ohor">أهور</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Ohor.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">@av</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="شام" data-en="Sham">شام</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="شاف" data-en="Shav">شاف</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Shav.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Fin</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="سنون" data-en="Fin">سنون</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="فين" data-en="Fin">فين</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Fin.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Emcah</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="سمك" data-en="Emsah">سمك</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="إمساح" data-en="Emsah">إمساح</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Emsah.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Ho4</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="طائر" data-en="Hof">طائر</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="هوف" data-en="Hof">هوف</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Hof.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Sitc</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="بطة" data-en="Tshets">بطة</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="تشتس" data-en="Tshets">تشتس</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Tshets.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Zenzen</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="سحلية" data-en="Zenzen">سحلية</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="زنزن" data-en="Zenzen">زنزن</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Zenzen.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Xrovr</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="بزون" data-en="Ekror">بزون</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="إكرو" data-en="Ekror">إكرو</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Ekror.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Cer3noc</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="سيرين" data-en="Serenos">سيرين</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="سيرينوس" data-en="Serenos">سيرينوس</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Serenos.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">B3g</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="بج" data-en="Veg">بج</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="فيج" data-en="Veg">فيج</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Veg.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Aqwm</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="عقرب" data-en="Scorpion">عقرب</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="أخوم" data-en="Akhom">أخوم</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Akhom.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Abok</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="بجع" data-en="Avok">بجع</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="أفوك" data-en="Avok">أفوك</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Avok.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Tawc</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="طاووس" data-en="Taoos">طاووس</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="طاؤس" data-en="Taoos">طاؤس</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Taoos.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Karapip</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="عقرب" data-en="Scorpion">عقرب</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="كريب" data-en="Karabib">كريب</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Karabib.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Ergw</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="ذئب" data-en="Wolf">ذئب</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="إرجو" data-en="Ergo">إرجو</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Ergo.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Wpt</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="عصفور" data-en="Bird">عصفور</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="أبوط" data-en="Obt">أبوط</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Obt.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Srompi</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="عصفور" data-en="Bird">عصفور</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="تشرومبي" data-en="Tshrombi">تشرومبي</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Tshrombi.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Sag</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="عصفور" data-en="Bird">عصفور</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="تشاج" data-en="Tshag">تشاج</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Tshag.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">K3toc</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="حوت" data-en="Ketos">حوت</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="كيتوس" data-en="Ketos">كيتوس</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Ketos.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p>
+                        <span class="coptic-text-class">Telfan</span>
+                        <span class="arabic-text-class" data-ar="الكلمة: " data-en="Word:">:الكلمة</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="ثعبان" data-en="Telfan">ثعبان</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="تلفان" data-en="Telfan">تلفان</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Telfan.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+            <div class="coptic-prayer-card">
+                <div class="table mb-0" style="flex-direction: column !important;">
+                    <p dir="ltr">
+                        <span class="coptic-text-class">Tebt</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="المعنى:" data-en="Meaning:">المعنى:</span>
+                        <span class="arabic-text-class" data-ar="ضفدع" data-en="Tebt">ضفدع</span>
+                    </p>
+                    <p class="arabic-text-class">
+                        <span data-ar="النطق:" data-en="Pronunciation:">النطق:</span>
+                        <span class="arabic-text-class" data-ar="تبت" data-en="Tebt">تبت</span>
+                    </p>
+                </div>
+                <button type="button" class="play-sound-btn" onclick="playSound('Animals/Tebt.m4a')">
+                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted position-relative">
+        <div class=" position-relative">
+            &copy; 2025 - <span data-ar="تعليم اللغة القبطية" data-en="Learn Coptic Language">تعليم اللغة القبطية</span>
+        </div>
+    </footer>
+
+    <audio id="player"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/site.js"></script>
+    <script src="js/language.js"></script>
+</body>
+</html>

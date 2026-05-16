@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>أدوات التعريف والتنكير - تعليم اللغة القبطية</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body dir="rtl">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <a class="navbar-brand fw-bold" href="../index.html">تعليم اللغة القبطية</a>
+                <div class="d-flex align-items-center gap-3" style="margin-right:auto;">
+                    <select id="languageSelector" class="form-select form-select-sm" style="width:auto;" onchange="changeLanguage(this.value)">
+                        <option value="ar" selected>العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid p-0 bg-white">
+        <!-- Header -->
+        <div class="header-bar">
+            <div class="header-nav">
+                <span class="header-label">
+                    <span class="arabic-text-class" data-ar="أدوات التعريف والتنكير" data-en="Definite and Indefinite Articles">أدوات التعريف والتنكير</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="container py-4">
+
+            <!-- First row: Indefinite Tools + Examples | Definite Tools -->
+            <div class="row justify-content-center g-4">
+                <!-- Indefinite Tools + Examples -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="card rule-card h-100">
+                        <div class="card-header">
+                            <span class="coptic-text-class">✥</span>
+                            <span class="arabic-text-class" data-ar="أدوات التنكير" data-en="Indefinite Tools">أدوات التنكير</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="coptic-arabic-text">
+                                <span class="coptic-text-class">/</span>
+                                <span class="arabic-text-class" data-ar="للمفرد بنوعيه :" data-en="For singular:">للمفرد بنوعيه :</span>
+                                <span class="coptic-text-class">Ov</span>
+                            </p>
+                            <p class="coptic-arabic-text">
+                                <span class="coptic-text-class">/</span>
+                                <span class="arabic-text-class" data-ar="للجمع بنوعيه :" data-en="For plural:">للجمع بنوعيه :</span>
+                                <span class="coptic-text-class">Han</span>
+                            </p>
+
+                            <hr />
+                            <div class="d-flex flex-column">
+                                <table class="table table-borderless align-middle">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</span></td>
+                                            <td><span class="coptic-text-class">Ovgig</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="يد" data-en="Hand">يد</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="أو چيج" data-en="Or gig">أو چيج</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule2/Ojig.m4a')">
+                                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                                </button>
+                            </div>
+                            <hr />
+                            <div class="d-flex flex-column">
+                                <table class="table table-borderless align-middle">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</span></td>
+                                            <td><span class="coptic-text-class">Hangig</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="أيدى" data-en="Hands">أيدى</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="هان چيج" data-en="Han gig">هان چيج</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule2/Hanjig.m4a')">
+                                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Definite Tools -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="card rule-card h-100">
+                        <div class="card-header">
+                            <span class="coptic-text-class">✥</span>
+                            <span class="arabic-text-class" data-ar="أدوات التعريف" data-en="Definite Tools">أدوات التعريف</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="coptic-arabic-text">
+                                <span class="arabic-text-class" data-ar="– أدوات تعريف عامة" data-en="– General definite tools">– أدوات تعريف عامة</span>
+                            </p>
+                            <p class="coptic-arabic-text">
+                                <span class="coptic-text-class">/</span>
+                                <span class="arabic-text-class" data-ar="للمفرد المذكر :" data-en="For masculine singular:">للمفرد المذكر :</span>
+                                <span class="coptic-text-class">Pi</span>
+                            </p>
+                            <p class="coptic-arabic-text">
+                                <span class="coptic-text-class">/</span>
+                                <span class="arabic-text-class" data-ar="للمفرد المؤنث :" data-en="For feminine singular:">للمفرد المؤنث :</span>
+                                <span class="coptic-text-class">%</span>
+                            </p>
+                            <p class="coptic-arabic-text">
+                                <span class="coptic-text-class">/</span>
+                                <span class="arabic-text-class" data-ar="للجمع بنوعيه :" data-en="For plural:">للجمع بنوعيه :</span>
+                                <span class="coptic-text-class">Ni</span>
+                            </p>
+
+                            <p class="coptic-arabic-text mt-3">
+                                <span class="arabic-text-class" data-ar="– أدوات تعريف خاصة تأتى أمام الكلمات التي تبدأ بـ " data-en="– Special definite tools that come before words starting with ">– أدوات تعريف خاصة تأتى أمام الكلمات التي تبدأ بـ </span>
+                                <span class="coptic-text-class">b i l m n o r</span>
+                            </p>
+                            <p class="coptic-arabic-text">
+                                <span class="coptic-text-class">/</span>
+                                <span class="arabic-text-class" data-ar="للمفرد المذكر :" data-en="For masculine singular:">للمفرد المذكر :</span>
+                                <span class="coptic-text-class">F "</span>
+                            </p>
+                            <p class="coptic-arabic-text">
+                                <span class="coptic-text-class">/</span>
+                                <span class="arabic-text-class" data-ar="للمفرد المؤنث :" data-en="For feminine singular:">للمفرد المؤنث :</span>
+                                <span class="coptic-text-class">0 "</span>
+                            </p>
+
+                            <p class="coptic-arabic-text mt-3">
+                                <span class="arabic-text-class" data-ar="– أدوات تعريف خاصة تأتى أمام الكلمات التي لا تبدأ بـ " data-en="– Special definite tools that come before words not starting with ">– أدوات تعريف خاصة تأتى أمام الكلمات التي لا تبدأ بـ </span>
+                                <span class="coptic-text-class">b i l m n o r</span>
+                            </p>
+                            <p class="coptic-arabic-text">
+                                <span class="coptic-text-class">/</span>
+                                <span class="arabic-text-class" data-ar="للمفرد المذكر :" data-en="For masculine singular:">للمفرد المذكر :</span>
+                                <span class="coptic-text-class">P "</span>
+                            </p>
+                            <p class="coptic-arabic-text">
+                                <span class="coptic-text-class">/</span>
+                                <span class="arabic-text-class" data-ar="للمفرد المؤنث :" data-en="For feminine singular:">للمفرد المؤنث :</span>
+                                <span class="coptic-text-class">T "</span>
+                            </p>
+
+                            <p class="coptic-arabic-text mt-3">
+                                <span class="arabic-text-class" data-ar="– أدوات تعريف خاصة تستخدم للأسماء الجمع المضافة" data-en="– Special definite tools used for added proper nouns">– أدوات تعريف خاصة تستخدم للأسماء الجمع المضافة</span>
+                            </p>
+                            <p class="coptic-arabic-text">
+                                <span class="coptic-text-class">/</span>
+                                <span class="arabic-text-class" data-ar="للجمع بنوعيه :" data-en="For plural:">للجمع بنوعيه :</span>
+                                <span class="coptic-text-class">Nem</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second row: Examples (Definite) -->
+            <div class="row justify-content-center g-4 mt-4">
+                <div class="col-lg-10 col-md-12">
+                    <div class="card rule-card">
+                        <div class="card-header">
+                            <span class="coptic-text-class">✥</span>
+                            <span class="arabic-text-class" data-ar="أمثلة أدوات التعريف" data-en="Examples of Definite Tools">أمثلة أدوات التعريف</span>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="d-flex flex-column">
+                                <!-- Example 1 -->
+                                <table class="table table-borderless align-middle mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</span></td>
+                                            <td><span class="coptic-text-class">Pirwmi</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="الإنسان" data-en="The Man">الإنسان</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="بي رومى" data-en="Bi-romi">بي رومى</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule2/Beromi.m4a')">
+                                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                                </button>
+                            </div>
+                            <hr class="my-2">
+
+                            <div class="d-flex flex-column">
+                                <!-- Example 2 -->
+                                <table class="table table-borderless align-middle mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</span></td>
+                                            <td><span class="coptic-text-class">%2ovr3</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="المجمرة" data-en="The Group">المجمرة</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="تي شورى" data-en="Ti-shory">تي شورى</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule2/Teshory.m4a')">
+                                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                                </button>
+                            </div>
+                            <hr class="my-2">
+
+                            <div class="d-flex flex-column">
+                                <!-- Example 3 -->
+                                <table class="table table-borderless align-middle mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</span></td>
+                                            <td><span class="coptic-text-class">Niajjeloc</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="الملائكة" data-en="The Kingdom">الملائكة</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="ني أنجيلوس" data-en="Ni-angelos">ني أنجيلوس</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule2/Neangelos.m4a')">
+                                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                                </button>
+                            </div>
+                            <hr class="my-2">
+
+                            <div class="d-flex flex-column">
+                                <!-- Example 4 -->
+                                <table class="table table-borderless align-middle mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</span></td>
+                                            <td><span class="coptic-text-class" dir="ltr">` Fovwini</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="النور" data-en="The Light">النور</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="إف أوأوينى" data-en="Ef-owini">إف أوأوينى</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule2/Efooini.m4a')">
+                                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                                </button>
+                            </div>
+                            <hr class="my-2">
+
+                            <div class="d-flex flex-column">
+                                <!-- Example 5 -->
+                                <table class="table table-borderless align-middle mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</span></td>
+                                            <td><span class="coptic-text-class" dir="ltr">` 0mav</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="الأم" data-en="The Mother">الأم</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="إث ماڤ" data-en="Eth-mav">إث ماڤ</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule2/Ethmav.m4a')">
+                                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                                </button>
+                            </div>
+                            <hr class="my-2">
+
+                            <div class="d-flex flex-column">
+                                <!-- Example 6 -->
+                                <table class="table table-borderless align-middle mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</span></td>
+                                            <td><span class="coptic-text-class" dir="ltr">` Povno4</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="الفرح" data-en="The Father">الفرح</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="إب أونوف" data-en="Ebonof">إب أونوف</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule2/Ebonof.m4a')">
+                                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                                </button>
+                            </div>
+                            <hr class="my-2">
+
+                            <div class="d-flex flex-column">
+                                <!-- Example 7 -->
+                                <table class="table table-borderless align-middle mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</span></td>
+                                            <td><span class="coptic-text-class" dir="ltr">` T2eri</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="الإبنة" data-en="The Daughter">الإبنة</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="إت شيري" data-en="Et-shery">إت شيري</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule2/Etshery.m4a')">
+                                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                                </button>
+                            </div>
+                            <hr class="my-2">
+
+                            <div class="d-flex flex-column">
+                                <!-- Example 8 -->
+                                <table class="table table-borderless align-middle mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</span></td>
+                                            <td><span class="coptic-text-class">Nen2eri `mpiovwini</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="أبناء النور" data-en="Children of the Light">أبناء النور</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</span></td>
+                                            <td><span class="arabic-text-class" data-ar="نين شيري إم بي أوأوينى" data-en="Nen-shery-im-pi-ef-owini">نين شيري إم بي أوأوينى</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button type="button" class="play-sound-btn" onclick="playSound('Rules/Rule2/Nenshery.m4a')">
+                                    <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                                </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted position-relative">
+        <div class=" position-relative">
+            &copy; 2025 - <span data-ar="تعليم اللغة القبطية" data-en="Learn Coptic Language">تعليم اللغة القبطية</span>
+        </div>
+    </footer>
+
+    <audio id="player"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/site.js"></script>
+    <script src="../js/language.js"></script>
+</body>
+</html>

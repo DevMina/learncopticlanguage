@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>حرف إيه - تعليم اللغة القبطية</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body dir="rtl">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <a class="navbar-brand fw-bold" href="../index.html">تعليم اللغة القبطية</a>
+                <div class="d-flex align-items-center gap-3" style="margin-right:auto;">
+                    <select id="languageSelector" class="form-select form-select-sm" style="width:auto;" onchange="changeLanguage(this.value)">
+                        <option value="ar" selected>العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid p-0 bg-white">
+        <!-- Header -->
+        <div class="header-bar">
+            <div class="header-nav">
+                <span class="header-label">
+                    <span class="arabic-text-class" data-ar="حرف إيه" data-en="Ei Letter">حرف إيه</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- Letter Info -->
+        <div class="container py-3">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col-sm-12">
+                    <div class="card rule-card mb-4">
+                        <div class="card-header">
+                            <span class="coptic-text-class">✥</span>
+                            <span class="arabic-text-class" data-ar="تعريف الحرف" data-en="Letter Definition">تعريف الحرف</span>
+                        </div>
+
+                        <div class="card-body d-flex flex-column">
+                            <div class="table">
+                                <p>
+                                    <span class="coptic-text-class">✥</span>
+                                    <span class="arabic-text-class" data-ar="شكل الحرف" data-en="Letter Shape">شكل الحرف</span>
+                                </p>
+
+                                <p class="indentC">
+                                    <span class="coptic-text-class">E &nbsp;&nbsp; e</span>
+                                </p>
+
+                                <p class="mt-3">
+                                    <span class="coptic-text-class">✥</span>
+                                    <span class="arabic-text-class" data-ar="حالات النطق" data-en="Pronunciation Cases">حالات النطق</span>
+                                </p>
+
+                                <p class="indent">
+                                    <span class="coptic-text-class">✤</span>
+                                    <span class="arabic-text-class" data-ar="ينطق ي خفيفه" data-en="Pronounced short e">ينطق ي خفيفه</span>
+                                </p>
+                            </div>
+
+                            <button type="button" class="play-sound-btn" onclick="playSound('Letters/Ei1.m4a')">
+                                <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Examples -->
+        <div class="container py-2">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card rule-card">
+                        <div class="card-header">
+                            <span class="coptic-text-class">✥</span>
+                            <span class="arabic-text-class" data-ar="مثال" data-en="Example">مثال</span>
+                        </div>
+
+                        <div class="card-body d-flex flex-column">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td>
+                                        <span class="arabic-text-class" data-ar="الكلمة :" data-en="Word :">الكلمة :</span>
+                                    </td>
+                                    <td>
+                                        <span class="coptic-text-class">Kemkem</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="arabic-text-class" data-ar="المعنى :" data-en="Meaning :">المعنى :</span>
+                                    </td>
+                                    <td>
+                                        <span class="arabic-text-class" data-ar="دف" data-en="Drum">دف</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="arabic-text-class" data-ar="النطق :" data-en="Pronunciation :">النطق :</span>
+                                    </td>
+                                    <td>
+                                        <span class="arabic-text-class" data-ar="كيم كيم" data-en="Kemkem">كيم كيم</span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <button type="button" class="play-sound-btn" onclick="playSound('Letters/Ei2.m4a')">
+                                <i class="bi bi-play-btn-fill text-primary" style="font-size: 50px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted position-relative">
+        <div class=" position-relative">
+            &copy; 2025 - <span data-ar="تعليم اللغة القبطية" data-en="Learn Coptic Language">تعليم اللغة القبطية</span>
+        </div>
+    </footer>
+
+    <audio id="player"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/site.js"></script>
+    <script src="../js/language.js"></script>
+</body>
+</html>
