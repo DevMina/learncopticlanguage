@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 </head>
 <body dir="rtl">
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid d-flex justify-content-between align-items-center">
                 <a class="navbar-brand fw-bold" href="index.html">تعليم اللغة القبطية</a>
                 <div class="d-flex align-items-center gap-3" style="margin-right:auto;">
-                    <select id="languageSelector" class="form-select form-select-sm" style="width:auto;" onchange="changeLanguage(this.value)">
+                    <select id="languageSelector" class="form-select form-select-sm" style="width:auto;">
                         <option value="ar" selected>العربية</option>
                         <option value="en">English</option>
                     </select>
@@ -24,67 +25,95 @@
     </header>
 
     <div class="translator-page">
-        <!-- Header -->
+
+        <!-- Page header -->
         <div class="header-bar">
             <div class="header-nav">
-                <h2 class="dictionary-header-title flex-grow-1 m-0" data-ar="قاموس قبطي" data-en="Coptic Dictionary">قاموس قبطي</h2>
+                <h2 class="dictionary-header-title flex-grow-1 m-0"
+                    data-ar="قاموس قبطي" data-en="Coptic Dictionary">قاموس قبطي</h2>
             </div>
         </div>
 
         <div class="container py-3">
-            <!-- Alert -->
+
+            <!-- Info alerts -->
             <div class="alert alert-info mb-3" role="alert">
-                <strong data-ar="ملاحظة:" data-en="Note:">ملاحظة:</strong> 
-                <span data-ar="هذا القاموس يحتوي على كلمات قبطية مع ترجمتها باللغة العربية والإنجليزية" data-en="This dictionary contains Coptic words with their Arabic and English translations">
+                <strong data-ar="ملاحظة:" data-en="Note:">ملاحظة:</strong>
+                <span data-ar="هذا القاموس يحتوي على كلمات قبطية مع ترجمتها باللغة العربية والإنجليزية"
+                      data-en="This dictionary contains Coptic words with their Arabic and English translations">
                     هذا القاموس يحتوي على كلمات قبطية مع ترجمتها باللغة العربية والإنجليزية
                 </span>
             </div>
             <div class="alert alert-info mb-3" role="alert">
                 <strong data-ar="كيفية الاستخدام:" data-en="How to use:">كيفية الاستخدام:</strong>
                 <ul class="mt-2 mb-0">
-                    <li data-ar="اختر لغة الترجمة (العربية أو الإنجليزية)" data-en="Choose translation language (Arabic or English)">اختر لغة الترجمة (العربية أو الإنجليزية)</li>
-                    <li data-ar="اكتب الكلمة للبحث واضغط على ترجم" data-en="Type the word to search and press Translate">اكتب الكلمة للبحث واضغط على ترجم</li>
+                    <li data-ar="اختر لغة الترجمة (العربية أو الإنجليزية)"
+                        data-en="Choose translation language (Arabic or English)">
+                        اختر لغة الترجمة (العربية أو الإنجليزية)
+                    </li>
+                    <li data-ar="اكتب الكلمة للبحث واضغط على ترجم"
+                        data-en="Type the word to search and press Translate">
+                        اكتب الكلمة للبحث واضغط على ترجم
+                    </li>
                 </ul>
             </div>
-            <!-- Language Toggle -->
-            <div class="row mb-3">
+
+            <!-- Dictionary status (word count / loading / error) -->
+            <div class="mb-2 text-muted small text-end">
+                <span id="dictStatus">جاري تحميل القاموس...</span>
+            </div>
+
+            <!-- Language toggle -->
+            <div class="row mb-3 align-items-center">
                 <div class="col-3 text-center">
-                    <button id="copticBtn" class="btn btn-secondary w-100" data-ar="قبطي" data-en="Coptic">قبطي</button>
+                    <button id="copticBtn" class="btn btn-secondary w-100"
+                            data-ar="قبطي" data-en="Coptic">قبطي</button>
                 </div>
                 <div class="col-1 text-center">
                     <i class="bi bi-translate"></i>
                 </div>
                 <div class="col-4 text-center">
                     <select id="selectedLanguage" class="form-select rounded-3 border-2">
-                        <option value="arabic" data-ar="العربية" data-en="Arabic">العربية</option>
+                        <option value="arabic"  data-ar="العربية" data-en="Arabic">العربية</option>
                         <option value="english" data-ar="English" data-en="English">English</option>
                     </select>
                 </div>
                 <div class="col-4 text-center">
-                    <button id="otherLanguageBtn" class="btn btn-primary w-100" data-ar="العربية" data-en="Arabic">العربية</button>
+                    <button id="otherLanguageBtn" class="btn btn-primary w-100"
+                            data-ar="العربية" data-en="Arabic">العربية</button>
                 </div>
             </div>
 
-            <!-- Input -->
+            <!-- Search input -->
             <div class="mb-3">
                 <label class="form-label">
-                    <strong data-ar="اكتب الكلمة للبحث:" data-en="Type word to search:">اكتب الكلمة للبحث:</strong>
+                    <strong data-ar="اكتب الكلمة للبحث:" data-en="Type word to search:">
+                        اكتب الكلمة للبحث:
+                    </strong>
                 </label>
-                <input type="text" id="nonCopticWordInput" class="form-control non-coptic-entry" data-ar-placeholder="اكتب الكلمة هنا..." data-en-placeholder="Type word here..." placeholder="اكتب الكلمة هنا..." />
-                <input type="text" id="copticWordInput" class="form-control coptic-entry" style="display:none;" data-ar-placeholder="اكتب الكلمة القبطية هنا..." data-en-placeholder="Type Coptic word here..." placeholder="اكتب الكلمة القبطية هنا..." />
+                <input type="text"
+                       id="nonCopticWordInput"
+                       class="form-control non-coptic-entry"
+                       placeholder="اكتب الكلمة هنا..." />
+                <input type="text"
+                       id="copticWordInput"
+                       class="form-control coptic-entry"
+                       placeholder="اكتب الكلمة القبطية هنا..."
+                       style="display:none;" />
             </div>
 
-            <!-- Translate Button -->
+            <!-- Translate button -->
             <div class="mb-3 text-end">
-                <button id="translateBtn" class="btn btn-primary" data-ar="ترجم" data-en="Translate">ترجم</button>
+                <button id="translateBtn" class="btn btn-primary"
+                        data-ar="ترجم" data-en="Translate">ترجم</button>
             </div>
 
-            <div id="resultsContainer" style="direction: rtl;"></div>
+            <!-- Results -->
+            <div id="resultsContainer" style="direction:rtl;"></div>
 
-            <!-- Coptic Keyboard -->
-            <div id="copticKeyboard" class="keyboard mt-3" style="direction: rtl !important; display:none;">
+            <!-- Coptic on-screen keyboard -->
+            <div id="copticKeyboard" class="keyboard mt-3" style="direction:ltr; display:none;">
                 <div class="keyboard-row">
-                    <button class="keyboard-key special" data-char="⌫">⌫</button>
                     <button class="keyboard-key" data-char="a">a</button>
                     <button class="keyboard-key" data-char="b">b</button>
                     <button class="keyboard-key" data-char="j">j</button>
@@ -93,6 +122,7 @@
                     <button class="keyboard-key" data-char="6">6</button>
                     <button class="keyboard-key" data-char="z">z</button>
                     <button class="keyboard-key" data-char="3">3</button>
+                    <button class="keyboard-key" data-char="0">0</button>
                 </div>
                 <div class="keyboard-row">
                     <button class="keyboard-key" data-char="i">i</button>
@@ -127,21 +157,29 @@
                     <button class="keyboard-key special" data-char="`">`</button>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <footer class="border-top footer text-muted position-relative">
-        <div class=" position-relative">
-            &copy; 2025 - <span data-ar="تعليم اللغة القبطية" data-en="Learn Coptic Language">تعليم اللغة القبطية</span>
+        </div><!-- /.container -->
+    </div><!-- /.translator-page -->
+
+    <footer class="border-top footer text-muted">
+        <div>&copy; 2020 -
+            <span data-ar="تعليم اللغة القبطية"
+                  data-en="Learn Coptic Language">تعليم اللغة القبطية</span>
         </div>
     </footer>
 
+    <!-- ── Scripts (order matters) ───────────────────────────────────────────
+         1. jQuery          – required by translator.js
+         2. Bootstrap       – UI components
+         3. google-sheets   – defines window.SheetsAPI + sets window.copticDictionary
+         4. language        – optional UI language switcher
+         5. translator      – uses window.SheetsAPI & window.copticDictionary
+    ──────────────────────────────────────────────────────────────────────── -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/site.js"></script>
-    <script src="js/language.js"></script>
     <script src="js/google-sheets.js"></script>
+    <script src="js/language.js"></script>
     <script src="js/translator.js"></script>
-    <audio id="player"></audio>
+
 </body>
 </html>

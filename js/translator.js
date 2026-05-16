@@ -1,245 +1,232 @@
-// Coptic dictionary data will be loaded from Google Sheets
-// This is now handled by google-sheets.js
-let copticDictionary = [];
+// translator.js - handles all translator UI logic
+// Reads dictionary via SheetsAPI.readDataFromFile() from google-sheets.js
+(function () {
 
-$(document).ready(async function() {
-    // Initialize variables
-    let translateFrom = "arabic";
-    let selectedLanguage = "arabic";
+$(document).ready(function () {
 
+    // ── State ─────────────────────────────────────────────────────────────────
+    var translateFrom = 'arabic';   // 'coptic' | 'arabic' | 'english'
+    var selectedLang  = 'arabic';   // 'arabic' | 'english'  (output language)
+
+    // ── UI helpers ────────────────────────────────────────────────────────────
     function getActiveInput() {
-        return translateFrom === "coptic" ? $('#copticWordInput') : $('#nonCopticWordInput');
+        return translateFrom === 'coptic'
+            ? $('#copticWordInput')
+            : $('#nonCopticWordInput');
     }
 
-    function setTypingDirection(isCoptic, selectedLanguage) {
-        var input = isCoptic ? $('#copticWordInput') : $('#nonCopticWordInput');
-        input.attr('dir', isCoptic || (selectedLanguage == "arabic") ? 'ltr' : 'rtl');
-        input.css('text-align', isCoptic || (selectedLanguage == "english") ? 'left' : 'right');
+    function uiText(ar, en) {
+        return selectedLang === 'arabic' ? ar : en;
     }
 
-    // Wait for Google Sheets data to be loaded
-    let dataLoaded = false;
-    const checkDataLoaded = setInterval(() => {
-        if (window.copticDictionary && window.copticDictionary.length > 0) {
-            dataLoaded = true;
-            clearInterval(checkDataLoaded);
-            
-            // Initialize with language from language.js
-            translateFrom = window.currentLanguage || "arabic";
-            selectedLanguage = window.currentLanguage || "arabic";
-            
-            // Sync language selector with current language
-            $('#selectedLanguage').val(selectedLanguage);
-            
-            // Initialize UI state
-            setTypingDirection(translateFrom == "coptic", selectedLanguage);
-            
-            console.log(`Translator ready with ${window.copticDictionary.length} words from Google Sheets`);
+    function setInputDirection() {
+        if (translateFrom === 'coptic') {
+            $('#copticWordInput').attr('dir', 'ltr').css('text-align', 'left');
+        } else {
+            var rtl = (selectedLang === 'arabic');
+            $('#nonCopticWordInput')
+                .attr('dir', rtl ? 'rtl' : 'ltr')
+                .css('text-align', rtl ? 'right' : 'left');
         }
-    }, 100);
+    }
 
-    // Fallback timeout
-    setTimeout(() => {
-        if (!dataLoaded) {
-            clearInterval(checkDataLoaded);
-            console.warn('Google Sheets data not loaded, using fallback');
-            // Initialize with fallback
-            translateFrom = window.currentLanguage || "arabic";
-            selectedLanguage = window.currentLanguage || "arabic";
-            $('#selectedLanguage').val(selectedLanguage);
-            setTypingDirection(translateFrom == "coptic", selectedLanguage);
-        }
-    }, 5000);
+    function showMsg(html) {
+        $('#resultsContainer').html(html);
+    }
 
-    // Language selector change
-    $('#selectedLanguage').change(function() {
-        selectedLanguage = $(this).val();
-        $('#resultsContainer').empty();
-        setTypingDirection(translateFrom == "coptic", selectedLanguage);
+    function showLoading() {
+        showMsg('<p class="text-muted">' + uiText('جاري التحميل...', 'Loading...') + '</p>');
+    }
+
+    function showStatus(msg) {
+        $('#dictStatus').text(msg);
+    }
+
+    // ── Load dictionary via SheetsAPI ─────────────────────────────────────────
+    // google-sheets.js exposes window.SheetsAPI and sets window.copticDictionary.
+    // We also reload fresh on demand so data stays current.
+    function loadDictionary() {
+        showStatus(uiText('جاري تحميل القاموس...', 'Loading dictionary...'));
+
+        window.SheetsAPI.readDataFromFile()
+            .then(function (data) {
+                window.copticDictionary = data;
+                showStatus(uiText(
+                    'تم تحميل ' + data.length + ' كلمة',
+                    data.length + ' words loaded'
+                ));
+                console.log('Dictionary ready: ' + data.length + ' words');
+            })
+            .catch(function (err) {
+                // copticDictionary already set to FALLBACK by google-sheets.js
+                var count = (window.copticDictionary || []).length;
+                showStatus(uiText(
+                    'بيانات احتياطية (' + count + ' كلمة)',
+                    'Fallback data (' + count + ' words)'
+                ));
+                console.warn('SheetsAPI failed, using fallback:', err.message);
+            });
+    }
+
+    // ── Mode switching ────────────────────────────────────────────────────────
+    function activateCoptic() {
+        translateFrom = 'coptic';
+        $('#copticBtn').removeClass('btn-secondary').addClass('btn-primary');
+        $('#otherLanguageBtn').removeClass('btn-primary').addClass('btn-secondary');
+        $('#nonCopticWordInput').hide().val('');
+        $('#copticWordInput').show().attr('inputmode', 'none');
+        $('#copticKeyboard').show();
+        showMsg('');
+        setInputDirection();
+        $('#copticWordInput').blur();
+    }
+
+    function activateOther() {
+        translateFrom = selectedLang;
+        $('#otherLanguageBtn').removeClass('btn-secondary').addClass('btn-primary');
+        $('#copticBtn').removeClass('btn-primary').addClass('btn-secondary');
+        $('#copticWordInput').hide().val('');
+        $('#nonCopticWordInput').show().attr('inputmode', 'text');
+        $('#copticKeyboard').hide();
+        showMsg('');
+        setInputDirection();
+    }
+
+    $('#copticBtn').on('click', activateCoptic);
+    $('#otherLanguageBtn').on('click', activateOther);
+
+    // ── Output-language selector ──────────────────────────────────────────────
+    $('#selectedLanguage').on('change', function () {
+        selectedLang = $(this).val();
+        if (translateFrom !== 'coptic') translateFrom = selectedLang;
+        $('#otherLanguageBtn').text(selectedLang === 'arabic' ? 'العربية' : 'English');
+        $('#nonCopticWordInput').attr('placeholder',
+            selectedLang === 'arabic' ? 'اكتب الكلمة هنا...' : 'Type word here...');
+        setInputDirection();
+        showMsg('');
         $('#nonCopticWordInput').val('');
         $('#copticWordInput').val('');
-        translateFrom = translateFrom == "coptic" ? translateFrom : selectedLanguage;
-        
-        // Update other language button text
-        const buttonText = selectedLanguage === 'arabic' ? 'العربية' : 'English';
-        $('#otherLanguageBtn').text(buttonText);
-    });
-    
-    // Coptic button click
-    $('#copticBtn').click(function () {
-        translateFrom = "coptic";
-        $('#copticKeyboard').show();
-        $(this).addClass('btn-primary').removeClass('btn-secondary');
-        $('#otherLanguageBtn').addClass('btn-secondary').removeClass('btn-primary');
-        $('#resultsContainer').empty();
-
-        // Hide Arabic input, show Coptic input
-        $('#nonCopticWordInput').hide().val('');
-        $('#copticWordInput').show();
-
-        setTypingDirection(translateFrom == "coptic", selectedLanguage);
-        $('#copticWordInput').attr('inputmode', 'none');
-        $('#copticWordInput').blur();
     });
 
-    // Other language button click
-    $('#otherLanguageBtn').click(function () {
-        translateFrom = selectedLanguage;
-        $('#copticKeyboard').hide();
-        $(this).addClass('btn-primary').removeClass('btn-secondary');
-        $('#copticBtn').addClass('btn-secondary').removeClass('btn-primary');
-        $('#resultsContainer').empty();
-
-        // Hide Coptic input, show Arabic input
-        $('#copticWordInput').hide().val('');
-        $('#nonCopticWordInput').show();
-
-        setTypingDirection(translateFrom == "coptic", selectedLanguage);
-        $('#nonCopticWordInput').attr('inputmode', 'text');
+    // ── Coptic keyboard ───────────────────────────────────────────────────────
+    $('#copticWordInput').on('focus', function () {
+        if (translateFrom === 'coptic') $('#copticKeyboard').show();
     });
 
-    // Coptic input focus
-    $('#copticWordInput').on('focus', function() {
-        if (translateFrom === "coptic") {
-            $('#copticKeyboard').show();
-        }
-    });
+    $(document).on('click', '.keyboard-key', function () {
+        var char    = $(this).data('char');
+        var input   = getActiveInput()[0];
+        var atInput = (document.activeElement === input);
+        var start   = atInput ? input.selectionStart : input.value.length;
+        var end     = atInput ? input.selectionEnd   : input.value.length;
 
-    // Keyboard clicks
-    $('.keyboard-key').click(function () {
-        var char = $(this).data('char');
-        var input = getActiveInput()[0];
-        var start = input.selectionStart;
-        var end = input.selectionEnd;
-
-        if (document.activeElement !== input) {
-            start = end = input.value.length;
-        }
-
-        if (char === "⌫") {
+        if (char === '⌫') {
             if (start > 0) {
                 input.value = input.value.slice(0, start - 1) + input.value.slice(end);
                 input.focus();
-                setTimeout(function () {
-                    input.setSelectionRange(start - 1, start - 1);
-                }, 0);
+                setTimeout(function () { input.setSelectionRange(start - 1, start - 1); }, 0);
             }
-        } else if (char === "✓") {
-            $('#translateBtn').click();
+        } else if (char === '✓') {
             $('#copticKeyboard').hide();
-        } else if (char !== "`") {
-            var newValue = input.value.slice(0, start) + char + input.value.slice(end);
-            var newCursorPos = start + char.length;
-            input.value = newValue;
+            doTranslate();
+        } else if (char !== '`') {
+            var newVal = input.value.slice(0, start) + char + input.value.slice(end);
+            var pos    = start + char.length;
+            input.value = newVal;
             input.focus();
-            setTimeout(function () {
-                input.setSelectionRange(newCursorPos, newCursorPos);
-            }, 0);
+            setTimeout(function () { input.setSelectionRange(pos, pos); }, 0);
         }
     });
 
-    // Translate button click
-    $('#translateBtn').click(function () {
+    // ── Translation ───────────────────────────────────────────────────────────
+    function doTranslate() {
         var word = getActiveInput().val().trim();
-        if (word === '') return;
+        if (!word) return;
         $('#copticKeyboard').hide();
 
-        // Search in dictionary
-        const results = searchDictionary(word, translateFrom, selectedLanguage);
-        const html = buildTranslationResults(results, selectedLanguage);
-        $('#resultsContainer').html(html);
-    });
+        var dict = window.copticDictionary;
 
-    // Allow Enter key to translate
-    $('#nonCopticWordInput, #copticWordInput').keypress(function(e) {
-        if (e.which === 13) { // Enter key
-            $('#translateBtn').click();
+        // Still loading — wait for google-sheets.js to finish
+        if (dict === null || dict === undefined) {
+            showMsg('<p class="text-muted">' + uiText('جاري تحميل القاموس، أعد المحاولة...', 'Dictionary loading, please retry...') + '</p>');
+            return;
         }
-    });
-});
 
-function searchDictionary(word, fromLang, toLang) {
-    const results = [];
-    const searchWord = word.toLowerCase().trim();
-    
-    if (!searchWord) return results;
-
-    copticDictionary.forEach(item => {
-        let match = false;
-        
-        switch(fromLang) {
-            case 'coptic':
-                match = item.coptic.toLowerCase().includes(searchWord);
-                break;
-            case 'arabic':
-                match = item.arabic.includes(searchWord);
-                break;
-            case 'english':
-                match = item.english.toLowerCase().includes(searchWord);
-                break;
+        if (!Array.isArray(dict) || dict.length === 0) {
+            showMsg('<p class="text-muted">' + uiText('القاموس فارغ.', 'Dictionary is empty.') + '</p>');
+            return;
         }
-        
-        if (match) {
-            results.push(item);
-        }
-    });
-    
-    return results;
-}
 
-function buildTranslationResults(results, selectedLang) {
-    if (results.length === 0) {
-        return `<p>${selectedLanguage === 'arabic' ? 'لم يتم العثور على الكلمة' : 'Word not found'}</p>`;
+        var results = searchDictionary(word, dict);
+        showMsg(buildResults(results));
     }
 
-    let html = '<div class="coptic-grid">';
-    const isArabicUI = selectedLanguage === 'arabic';
+    $('#translateBtn').on('click', doTranslate);
+    $('#nonCopticWordInput, #copticWordInput').on('keydown', function (e) {
+        if (e.key === 'Enter') doTranslate();
+    });
 
-    results.forEach(item => {
-        let translated = selectedLang === 'arabic' ? 
-            { word: item.arabic, pronunciation: item.pronunciation } :
-            { word: item.english, pronunciation: item.englishPronunciation };
+    // ── Search ────────────────────────────────────────────────────────────────
+    function normalizeArabic(s) {
+        return (s || '')
+            .replace(/[أإآا]/g, 'ا')
+            .replace(/ى/g, 'ي')
+            .replace(/ة/g, 'ه')
+            .trim();
+    }
 
-        if (isArabicUI) {
-            const meaningLine = selectedLang === 'arabic' ? 
-                `<p class='dictionary-coptic-label'>
-                        ${selectedLanguage === 'arabic' ? 'المعنى:' : 'Meaning:'} <span class='arabic-text'>${translated.word}</span>
-                    </p>` :
-                `<p class='dictionary-coptic-label' dir='rtl'>
-                        ${selectedLanguage === 'arabic' ? 'المعنى:' : 'Meaning:'} <span class='arabic-text'>${translated.word}</span>
-                    </p>`;
-            
-            const pronunciationLine = selectedLang === 'arabic' ? 
-                `<p class='dictionary-coptic-label'>
-                        ${selectedLanguage === 'arabic' ? 'النطق:' : 'Pronunciation:'} <span class='arabic-text'>${translated.pronunciation}</span>
-                    </p>` :
-                `<p class='dictionary-coptic-label' dir='rtl'>
-                        ${selectedLanguage === 'arabic' ? 'النطق:' : 'Pronunciation:'} <span class='arabic-text'>${translated.pronunciation}</span>
-                    </p>`;
-            
-            html += `<div class='coptic-card' style='flex-direction: column !important'>
-                    <p class='dictionary-coptic-label'>
-                        <span class='coptic-text'>${item.coptic}</span> ${selectedLanguage === 'arabic' ? 'كلمة:' : 'Word:'}
-                    </p>
-                    ${meaningLine}
-                    ${pronunciationLine}
-                </div>`;
-            } else {
-                html += `<div class='coptic-card' style='flex-direction: column !important'>
-                    <p class='dictionary-coptic-label'>
-                        ${selectedLanguage === 'arabic' ? 'كلمة:' : 'Word:'} <span class='coptic-text'>${item.coptic}</span>
-                    </p>
-                    <p class='dictionary-coptic-label'>
-                        ${selectedLanguage === 'arabic' ? 'المعنى:' : 'Meaning:'} <span class='arabic-text'>${translated.word}</span>
-                    </p>
-                    <p class='dictionary-coptic-label'>
-                        ${selectedLanguage === 'arabic' ? 'النطق:' : 'Pronunciation:'} <span class='arabic-text'>${translated.pronunciation}</span>
-                    </p>
-                </div>`;
+    function searchDictionary(word, dict) {
+        var q = word.toLowerCase().trim();
+        return dict.filter(function (item) {
+            switch (translateFrom) {
+                case 'coptic':  return (item.coptic  || '').toLowerCase().includes(q);
+                case 'arabic':  return normalizeArabic(item.arabic  || '').includes(normalizeArabic(word));
+                case 'english': return (item.english || '').toLowerCase().includes(q);
+                default:        return false;
             }
         });
-    
+    }
 
-    html += '</div>';
-    return html;
-}
+    // ── Build results HTML ────────────────────────────────────────────────────
+    function buildResults(results) {
+        if (results.length === 0) {
+            return '<p class="text-muted">' + uiText('لم يتم العثور على الكلمة', 'Word not found') + '</p>';
+        }
+
+        var wordLabel = uiText('كلمة:',   'Word:');
+        var meanLabel = uiText('المعنى:', 'Meaning:');
+        var pronLabel = uiText('النطق:',  'Pronunciation:');
+
+        var html = '<div class="coptic-grid">';
+        results.forEach(function (item) {
+            var out = selectedLang === 'arabic'
+                ? { word: item.arabic  || '', pron: item.pronunciation        || '' }
+                : { word: item.english || '', pron: item.englishPronunciation || '' };
+
+            html +=
+                '<div class="coptic-card" style="flex-direction:column !important;">' +
+                    '<p class="dictionary-coptic-label">' +
+                        wordLabel + ' <span class="coptic-text">'  + esc(item.coptic) + '</span>' +
+                    '</p>' +
+                    '<p class="dictionary-coptic-label">' +
+                        meanLabel + ' <span class="arabic-text">'  + esc(out.word)    + '</span>' +
+                    '</p>' +
+                    '<p class="dictionary-coptic-label">' +
+                        pronLabel + ' <span class="arabic-text">'  + esc(out.pron)    + '</span>' +
+                    '</p>' +
+                '</div>';
+        });
+        html += '</div>';
+        return html;
+    }
+
+    function esc(s) {
+        return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    // ── Init ──────────────────────────────────────────────────────────────────
+    setInputDirection();
+    loadDictionary();   // fetch fresh data from Google Sheets via SheetsAPI
+});
+
+})();
