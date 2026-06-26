@@ -44,12 +44,12 @@ main {
 /* Fonts */
 @font-face {
     font-family: 'Avva_Shenouda';
-    src: url('/fonts/Avva_Shenouda.ttf') format('truetype');
+    src: url('fonts/Avva_Shenouda.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Abraam';
-    src: url('/fonts/Abraam.ttf') format('truetype');
+    src: url('fonts/Abraam.ttf') format('truetype');
 }
 
 /* Header */
